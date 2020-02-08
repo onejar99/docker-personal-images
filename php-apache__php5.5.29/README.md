@@ -18,6 +18,14 @@ $ docker run --name myPhpApache -d -p 40001:80 onejar99/php-apache:php5.5.29
 
 And then visit http://127.0.0.1:40001.
 
+Or test your code by volumes:
+
+```
+$ mkdir /tmp/testWWW
+$ echo '<?php echo "hi php"; ?>' > /tmp/testWWW/test.php
+$ docker run --name myPhpApache -d -p 40002:80 -v /tmp/testWWW:/var/www/html onejar99/php-apache:php5.5.29
+```
+visit http://127.0.0.1:40002/test.php.
 
 
 ## Build & Release
