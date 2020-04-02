@@ -5,8 +5,10 @@
 A customized php-apache image for compatible with php 5.x for purposes of development and test. Not recommended to use in production environment.
 
 Customized:
+- Change timezone to Asia/Taipei.
 - install php package mysql
 - install php package mysqli
+- install php package mbstring
 
 
 ## Quick Start
