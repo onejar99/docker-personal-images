@@ -9,8 +9,8 @@ Customized:
 - install php package mysql
 - install php package mysqli
 - install php package mbstring
-- custom php.ini
-- custom apache config with acces/error logs rotation (keep 1 year)
+- customize php.ini
+- customize apache config with access/error logs rotation (keep 1 year)
 
 
 ## Quick Start
@@ -42,8 +42,8 @@ $ docker run --name myPhpApache -d -p 40001:80  -v /tmp/testWWW:/var/www/html  -
 
 * php.ini path in container: `/usr/local/etc/php/php.ini`
 * apache configuration file in container: `/etc/apache2/sites-available/custom-default.conf`
-* access log path in container: `/var/log/custom/access.log.*` (rotated per day)
-* php error log path in container: `/var/log/custom/php_errors.log.*` (rotated per day)
+* access log path in container: `/var/log/custom/access.log.*` (rotated by day)
+* php error log path in container: `/var/log/custom/php_errors.log.*` (rotated by day)
 
 
 ## Build & Release
