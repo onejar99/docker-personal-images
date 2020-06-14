@@ -9,6 +9,8 @@ Customized:
 - install php package mysql
 - install php package mysqli
 - install php package mbstring
+- custom php.ini
+- custom apache config with acces/error logs rotation (keep 1 year)
 
 
 ## Quick Start
@@ -25,16 +27,33 @@ Or test your code by volumes:
 ```
 $ mkdir /tmp/testWWW
 $ echo '<?php echo "hi php"; ?>' > /tmp/testWWW/test.php
-$ docker run --name myPhpApache -d -p 40002:80 -v /tmp/testWWW:/var/www/html onejar99/php-apache:php5.5.29
+$ docker run --name myPhpApache -d -p 40001:80 -v /tmp/testWWW:/var/www/html onejar99/php-apache:php5.5.29
 ```
-visit http://127.0.0.1:40002/test.php.
+And then visit http://127.0.0.1:40001/test.php.
+
+You also can persist error logs by volumes:
+
+```
+$ docker run --name myPhpApache -d -p 40001:80  -v /tmp/testWWW:/var/www/html  -v $(PWD)/log:/var/log/custom  onejar99/php-apache:php5.5.29
+```
+
+
+## Configuration
+
+* php.ini path in container: `/usr/local/etc/php/php.ini`
+* apache configuration file in container: `/etc/apache2/sites-available/custom-default.conf`
+* access log path in container: `/var/log/custom/access.log.*` (rotated per day)
+* php error log path in container: `/var/log/custom/php_errors.log.*` (rotated per day)
 
 
 ## Build & Release
 
 ```
-$ docker build -t onejar99/php-apache:php5.5.29 .
-$ docker push onejar99/php-apache:php5.5.29
+$ majorTag=php5.5.29 && buildTag=${majorTag}_$(date +"%Y%m%d") && echo $buildTag \
+&& docker build -t onejar99/php-apache:${buildTag} . \
+&& docker push onejar99/php-apache:${buildTag} \
+&& docker image tag onejar99/php-apache:${buildTag} onejar99/php-apache:${majorTag} \
+&& docker push onejar99/php-apache:${majorTag}
 ```
 
 
