@@ -9,7 +9,7 @@ A customized image for gitbook based on node:12.16.1.
 
 - Basic `gitbook` command line.
 - Support customizing favicon.ico of static sites.
-- Support making PDF (full version)
+- Support making PDF (by full version)
 - Support PDF 中文編碼 (using [Google Noto Sans CJK TC](https://www.google.com/get/noto/#sans-hant))
 
 
@@ -47,14 +47,6 @@ $ docker run --rm -p 4000:4000 -v $(pwd):/gitbook onejar99/gitbook:light "gitboo
 $ docker run --rm -p 4000:4000 -v $(pwd):/gitbook onejar99/gitbook:full "gitbook init && gitbook install && gitbook pdf"
 ```
 
-$ echo '<h1>Hi Live Server</h1>' > /tmp/testWWW/index.html
-
-
-$ docker run --rm -i -p 4002:4000 -v $(pwd):/gitbook onejar99/gitbook:full-node12 "gitbook serve"
-
-$ docker run --rm -ti -p 4011:4000 -v $(pwd):/gitbook onejar99/gitbook:full-node12 "gitbook serve"
-
-
 
 ## User Guide
 
@@ -70,9 +62,9 @@ $ docker run --rm -p 4000:4000 -v $(pwd):/gitbook onejar99/gitbook:light "gitboo
 $ docker run --rm -p 4000:4000 -v $(pwd):/gitbook onejar99/gitbook:light "gitbook install && gitbook build"
 ```
 
-Output files will be `_book` folder.
+Output files will be in `$(pwd)/_book` folder.
 
-Test the site:
+Verify the site with a light web server:
 ```bash
 $ docker run --rm  -p 4000:8080 -v $(pwd)/_book:/home/app/public onejar99/nodejs-live-server:node12.16.1
 ```
@@ -81,8 +73,11 @@ and then visit http://localhost:4000.
 
 You can customize following files:
 - `book.json`: customize gitbook plugins configuration by your requirements.
-- `favicon.ico`: optional, static site's favicon.
+- `favicon.ico`: (optional) static site's favicon.
 
+
+Result Demo:
+![](https://i.imgur.com/L8WJlNr.png)
 
 
 ### 2. Build PDF (by full version)
@@ -92,14 +87,15 @@ Build a PDF book:
 ```bash
 $ cd book_sources_example   # the folder of your book
 $ docker run --rm -p 4000:4000 -v $(pwd):/gitbook onejar99/gitbook:full "gitbook init"
-# output file named book.pdf by default
+# by default, pdf file named "book.pdf"
 $ docker run --rm -p 4000:4000 -v $(pwd):/gitbook onejar99/gitbook:full "gitbook install && gitbook pdf"
-# specify output file name
+# specify pdf file name as "mybook.pdf"
 $ docker run --rm -p 4000:4000 -v $(pwd):/gitbook onejar99/gitbook:full "gitbook install && gitbook pdf ./ mybook.pdf"
 ```
 
 You can customize following files:
-- `cover.jpg`: optional, the output PDF's cover.
+- `cover.jpg`: (optional) cover of output PDF.
+
 
 Result Demo:
 
@@ -213,9 +209,6 @@ $
 
 再執行一次可能就能過，但出現頻率有點高，測試 failure ratio 超過 50% (13/20)，以工具來說太不穩定。
 
-#### References
-- [gitbook serve error with ENOENT: no such file or directory(fontsettings.js&website.css) · Issue #55 · GitbookIO/gitbook-cli · GitHub](https://github.com/GitbookIO/gitbook-cli/issues/55)
-- [gitbook serve命令找不到fontsettings.js - segmentfault](https://segmentfault.com/q/1010000009569245)
 
 #### Solution
 
@@ -249,7 +242,12 @@ line 112 的 `confirm: true` 改 `confirm: false`:
         {
             deleteFirst: false,
             overwrite: true,
-            confirm: true
+            confirm: true // <--- here
         }
     );
 ```
+
+#### References
+
+- [gitbook serve error with ENOENT: no such file or directory(fontsettings.js&website.css) · Issue #55 · GitbookIO/gitbook-cli · GitHub](https://github.com/GitbookIO/gitbook-cli/issues/55)
+- [gitbook serve命令找不到fontsettings.js - segmentfault](https://segmentfault.com/q/1010000009569245)
