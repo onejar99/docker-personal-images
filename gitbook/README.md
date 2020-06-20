@@ -123,7 +123,7 @@ $ docker run --rm -p 4000:4000 -v $(pwd):/gitbook onejar99/gitbook:light "gitboo
 ```
 and then visit http://localhost:4000.
 
-> NOTE: Because the container cannot receive Ctrl + C signal, you must terminal it by `docker stop`. That's why this usage is not recommended.
+> NOTE: Because the container cannot receive the signal of Ctrl + C, you must terminate it by `docker stop`. That's why this usage is not recommended.
 
 ```bash
 # assume container id is 1b78785665e7
@@ -168,7 +168,7 @@ About this image:
 
 ## Appendix: Fixed Issues
 
-Record issue fixing log.
+Record the course of issue fixing.
 
 ### [Issue] Errors sometimes when run `gitbook build` or `gitbook serve`
 
