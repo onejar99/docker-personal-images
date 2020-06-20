@@ -34,8 +34,8 @@ There are 2 versions for different purposes:
 
 | Version | Image Size | Description                         |
 |:-------:|:----------:|:------------------------------------|
-| light   | 1.18GB     | Support Static Sites buiding.       |
-| full    | 2.09GB     | Support Static Sites & PDF buiding. |
+| light   | 1.18GB     | Support Static Sites building.       |
+| full    | 2.09GB     | Support Static Sites & PDF building. |
 
 
 
