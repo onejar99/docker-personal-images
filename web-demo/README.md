@@ -5,7 +5,7 @@
 A very simple image which can launch a web page.
 They can use to test deplying various veriosn services on k8s.
 
-![](i_imgur_com_3RoT0yF.png)
+![](./figures/i_imgur_com_3RoT0yF.png)
 
 ## Quick Start
 
