@@ -77,7 +77,6 @@ You can customize following files:
 
 
 Result Demo:
-![](https://i.imgur.com/L8WJlNr.png)
 ![](./figures/i_imgur_com_L8WJlNr.png)
 
 
