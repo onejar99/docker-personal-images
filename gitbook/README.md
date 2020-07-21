@@ -78,6 +78,7 @@ You can customize following files:
 
 Result Demo:
 ![](https://i.imgur.com/L8WJlNr.png)
+![](./figures/i_imgur_com_L8WJlNr.png)
 
 
 ### 2. Build PDF (by full version)
@@ -99,7 +100,7 @@ You can customize following files:
 
 Result Demo:
 
-![](https://i.imgur.com/yTkc7O0.png)
+![](./figures/i_imgur_com_yTkc7O0.png)
 
 
 ### 3. Serving By Development Mode (`gitbook serve`)
