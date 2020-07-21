@@ -1,0 +1,6 @@
+FROM php:7.4-apache
+
+# web files
+COPY src/index.v2.php /var/www/html/index.php
+
+EXPOSE 80
