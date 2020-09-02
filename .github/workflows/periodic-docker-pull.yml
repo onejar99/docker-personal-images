@@ -10,11 +10,11 @@ on:
       #- 'scripts/docker-pulling.sh'
   schedule:
     # The shortest interval you can run scheduled workflows is once every 5 minutes.
-    - cron: '*/10 * * * *'
+    - cron: '1 1 1 */1 *'
 
 jobs:
   docker-pull-all-images:
-    name: docker pull all images by list
+    name: Pull docker images by list
     runs-on: ubuntu-latest
 
     steps:
@@ -28,6 +28,6 @@ jobs:
         echo "pwd=[$(pwd)]"
         ls -al
         cd scripts
-        #sh -x docker-pulling.sh
+        sh -x docker-pulling.sh
         echo "Task completed! 💪💯"
         
