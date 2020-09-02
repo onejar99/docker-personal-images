@@ -6,10 +6,10 @@ on:
     branches:
       - master
     paths:
-      - '.github/workflows/periodic-docker-pull.yml'
-      - 'scripts/docker-pulling.sh'
+      #- '.github/workflows/periodic-docker-pull.yml'
+      #- 'scripts/docker-pulling.sh'
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '* */1 * * *'
 
 jobs:
   docker-pull-all-images:
@@ -27,6 +27,6 @@ jobs:
         echo "pwd=[$(pwd)]"
         ls -al
         cd scripts
-        sh docker-pulling.sh
+        sh -x docker-pulling.sh
         echo "Task completed! 💪💯"
         
