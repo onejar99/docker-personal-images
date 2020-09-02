@@ -6,10 +6,10 @@ on:
     branches:
       - master
     paths:
-      #- '.github/workflows/periodic-docker-pull.yml'
+      - '.github/workflows/periodic-docker-pull.yml'
       #- 'scripts/docker-pulling.sh'
   schedule:
-    - cron: '* */1 * * *'
+    - cron: '*/5 * * * *'
 
 jobs:
   docker-pull-all-images:
