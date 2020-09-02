@@ -9,7 +9,8 @@ on:
       - '.github/workflows/periodic-docker-pull.yml'
       #- 'scripts/docker-pulling.sh'
   schedule:
-    - cron: '*/5 * * * *'
+    # The shortest interval you can run scheduled workflows is once every 5 minutes.
+    - cron: '*/10 * * * *'
 
 jobs:
   docker-pull-all-images:
@@ -27,6 +28,6 @@ jobs:
         echo "pwd=[$(pwd)]"
         ls -al
         cd scripts
-        sh -x docker-pulling.sh
+        #sh -x docker-pulling.sh
         echo "Task completed! 💪💯"
         
