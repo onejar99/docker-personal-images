@@ -25,3 +25,7 @@ docker pull onejar99/phpmyadmin:latest
 # web-demo
 docker pull onejar99/web-demo:v1
 docker pull onejar99/web-demo:v2
+
+# javasdk
+docker pull onejar99/javasdk:openjdk8
+docker pull onejar99/javasdk:openjdk8_20210228
