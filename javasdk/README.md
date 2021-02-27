@@ -1,4 +1,4 @@
-# javajdk
+# javasdk
 
 ## Introduction
 
@@ -30,5 +30,5 @@ $ majorTag=openjdk8 && buildTag=${majorTag}_$(date +"%Y%m%d") && echo $buildTag 
 
 ## References
 
-- Docker Repository: https://hub.docker.com/r/onejar99/javajdk/tags
-- GitHub: https://github.com/onejar99/docker-personal-images/tree/master/javajdk
+- Docker Repository: https://hub.docker.com/r/onejar99/javasdk/tags
+- GitHub: https://github.com/onejar99/docker-personal-images/tree/master/javasdk
