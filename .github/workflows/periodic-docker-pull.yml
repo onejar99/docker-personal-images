@@ -30,4 +30,3 @@ jobs:
         cd scripts
         sh -x docker-pulling.sh
         echo "Task completed! 💪💯"
-        

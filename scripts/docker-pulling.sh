@@ -29,3 +29,7 @@ docker pull onejar99/web-demo:v2
 # javasdk
 docker pull onejar99/javasdk:openjdk8
 docker pull onejar99/javasdk:openjdk8_20210228
+
+# python
+docker pull onejar99/python:3.8
+docker pull onejar99/python:3.8_20220117
