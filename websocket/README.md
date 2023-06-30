@@ -8,9 +8,9 @@
 * Use `express` + `ws` packages.
 * Support 2 relay modes:
     1. In-memory: only support single server node.
-    2. Pub/Sub(by Redis): support muliple server nodes.
+    2. Pub/Sub(by Redis): support multiple server nodes.
 
-### Client Side
+### Client
 
 * A simple client, using `WebSocket` API supported by native JavaScript.
 * No 3rd party lib used.
@@ -38,8 +38,6 @@ $ export REDIS_HOST=localhost; export REDIS_PORT=16379; node src/server.js
 
 ### Method 2: Run by Docker
 
-#### Build server docker image
-
 (A) In-memory relay mode:
 ```bash
 $ docker run -ti --rm --name wsServer -p 43001:80 onejar99/websocket-server:latest
@@ -65,10 +63,10 @@ $ docker run -ti --rm -e REDIS_HOST=172.17.0.3 -e REDIS_PORT=6379 --name wsServe
 ## Quick Start: Test by Client
 
 1. Open `client.html` by browser:
-    - Enter the WebSocket Server endpoint to `Server` field and click `Connect`.
+    - Enter the WebSocket Server endpoint into `Server` field and click `Connect`.
     - Enter `Nickname` as AAA, choose Room1, and click `Join`.
 2. Open another browser tab with:
-    - Enter the WebSocket Server endpoint to `Server` field and click `Connect`.
+    - Enter the WebSocket Server endpoint into `Server` field and click `Connect`.
     - Enter `Nickname` as BBB, choose Room1, and click `Join`.
 3. Send message by AAA page, and observe the logs.
 
