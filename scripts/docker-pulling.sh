@@ -34,3 +34,7 @@ docker pull onejar99/javasdk:openjdk8_20210228
 # python
 docker pull onejar99/python:3.8
 docker pull onejar99/python:3.8_20220117
+
+# redis-conn-tester
+docker pull onejar99/redis-conn-tester:latest
+docker pull onejar99/redis-conn-tester:latest_20230630
