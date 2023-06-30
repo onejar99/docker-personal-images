@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src='./client.js'></script>
+        <script>
+            $(document).ready(function() {
+                $("#doConnect").bind('click', function() {
+                    connect($("#serverAddr").val());
+                });
+                $("#doJoinRoom").bind('click', function() {
+                    let roomId = $('input[name="roomId"]:checked').val();
+                    joinRoom($("#nickname").val(), roomId);
+                });
+                $("#doSendMsg").bind('click', function() {
+                    sendMessage($("#msg").val());
+                });
+                $("#doAskServerStatus").bind('click', function() {
+                    askServerStatus();
+                });
+                $("#doClearDB").bind('click', function() {
+                    clearRoomDB();
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Websocket Client</h1>
+        <h2>Connect:</h2>
+        * Server: <input type="text" id="serverAddr" value="ws://localhost:80" style="width:80%;"/>
+        <button id="doConnect">Connect</button>
+        <hr/>
+        <h2>Join Room:</h2>
+        * Nickname: <input type="text" id="nickname" value="" /><br>
+        * Room:
+        <input type="radio" name="roomId" value="room1"><label for="room1">Room 1</label>
+        <input type="radio" name="roomId" value="room2"><label for="room2" checked>Room 2</label><br>
+        <button id="doJoinRoom">Join</button>
+        <hr/>
+        <h2>Send Message:</h2>
+        <input type="text" id="msg" placeholder="message..." style="width:50%;" /> <button id="doSendMsg">Send</button><br>
+        <br>
+        <button id="doAskServerStatus">Ask Server Status</button>
+        <hr/>
+        <h2>Log:</h2>
+        <div style="border: 0px solid black; width:100%; height:50%;">
+            <ul id="log">
+            </ul>
+        </div>
+        <hr/>
+        <button id="doClearDB">Clear DB</button>
+
+    </body>
+</html>
+
+
