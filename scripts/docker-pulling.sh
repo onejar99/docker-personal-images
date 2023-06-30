@@ -3,6 +3,7 @@
 # gitbook
 docker pull onejar99/gitbook:light
 docker pull onejar99/gitbook:light_20200617
+docker pull onejar99/gitbook:light_20230630
 docker pull onejar99/gitbook:full
 docker pull onejar99/gitbook:full_20200617
 

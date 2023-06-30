@@ -1,10 +1,13 @@
-FROM node:12.16.1
+FROM node:18.16.0-alpine3.16
 
-RUN apt-get update
-RUN apt-get install -y vim
+RUN apk update
+RUN apk add vim unzip
 
 # basic gitbook commands
 RUN npm install gitbook-cli -g
+# for fixing issue of cannot install gitbook in node 18.16.0
+RUN cd /usr/local/lib/node_modules/gitbook-cli/node_modules/npm/node_modules \
+    && npm install graceful-fs@latest --save
 # note: do not install `gitbook` package by npm, or it will install gitbook@2.6.9 and cannot work
 RUN gitbook --version # Trigger installing gitbook
 RUN npm install gitbook-plugin -g
