@@ -29,7 +29,7 @@ $ node src/server.js
 
 ## or (B) Pub/Sub relay mode
 $ docker run -d --rm --name redisServer -p 16379:6379 redis  # (Skip if you have an existing redis server)
-$ export REDIS_HOST=localhost; export REDIS_PORT=16379; node src/server.js
+$ export REDIS_HOST=localhost && export REDIS_PORT=16379 && node src/server.js
 ```
 
 * WebSocket Server endpoint: `ws://localhost:80`
@@ -70,6 +70,19 @@ $ docker run -ti --rm -e REDIS_HOST=172.17.0.3 -e REDIS_PORT=6379 --name wsServe
     - Enter `Nickname` as BBB, choose Room1, and click `Join`.
 3. Send message by AAA page, and observe the logs.
 
+
+## Change WebSocket Port
+
+* 80(default), You can use environment variable `WS_PORT` to change.
+* Docker image support ports: 80 / 3000
+
+```bash
+# run by Node.js
+$ export WS_PORT=35000 && REDIS_HOST=localhost && export REDIS_PORT=16379 && node src/server.js
+
+# run by Docker
+$ docker run -ti --rm -e WS_PORT=3000 -e REDIS_HOST=172.17.0.3 -e REDIS_PORT=6379 --name wsServer -p 43001:3000 onejar99/websocket-server:latest
+```
 
 ## Build & Release
 

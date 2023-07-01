@@ -41,4 +41,4 @@ docker pull onejar99/redis-conn-tester:latest_20230630
 
 # websocket-server
 docker pull onejar99/websocket-server:latest
-docker pull onejar99/websocket-server:latest_20230630
+docker pull onejar99/websocket-server:latest_20230701

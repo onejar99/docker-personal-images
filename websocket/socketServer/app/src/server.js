@@ -2,16 +2,16 @@ const express = require('express');
 const SocketServer = require('ws').Server;
 const ChatServer = require('./ChatServer');
 
-const WS_PORT = 80; // 3000;
-
+let WS_PORT = 80;
+if (process.env.WS_PORT) {
+    WS_PORT = process.env.WS_PORT;
+}
 let REDIS_HOST = process.env.REDIS_HOST;
 let REDIS_PORT = process.env.REDIS_PORT;
+
+console.log("env WS_PORT=", WS_PORT);
 console.log("env REDIS_HOST=", REDIS_HOST);
 console.log("env REDIS_PORT=", REDIS_PORT);
-//REDIS_HOST = "my-redis-cluster-not-clsmode.46vegk.ng.0001.use1.cache.amazonaws.com";
-//REDIS_PORT = 6379;
-//REDIS_HOST = "localhost";
-//REDIS_PORT = 16379;
 
 // create express object, bind & listen port
 const app = express()

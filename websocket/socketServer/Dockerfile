@@ -9,7 +9,7 @@ RUN chmod +x /root/app_start.sh
 COPY app /root/app
 
 WORKDIR /root/app
-#EXPOSE 3000
+EXPOSE 3000
 EXPOSE 80
 
 ENTRYPOINT ["sh", "/root/app_start.sh"]
