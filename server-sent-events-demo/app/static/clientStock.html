@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src='./clientStock.js'></script>
+        <script>
+            $(document).ready(function() {
+                $("#connectStockServer").bind('click', function() {
+                    connectStockServer();
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Client</h1>
+        <h2>連線到股市報價主機</h2>
+        <button id="connectStockServer">Connect</button>
+        <hr/>
+        <h2>Received Messages:</h2>
+        <ul id="history"></ul>
+
+    </body>
+</html>

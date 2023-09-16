@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src='./clientChatBot.js'></script>
+        <script>
+            $(document).ready(function() {
+                $("#sendQuestion").bind('click', function() {
+                    sendQuestion($("#question").val());
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Client</h1>
+        <h2>你想聊什麼：</h2>
+        <input type="text" id="question" value="今天天氣如何" style="width:80%;"/>
+        <button id="sendQuestion">Submit</button>
+        <hr/>
+        <h2>Received Messages:</h2>
+        <ul id="history"></ul>
+
+    </body>
+</html>
